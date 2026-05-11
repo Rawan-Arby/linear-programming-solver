@@ -1,0 +1,8 @@
+Minimize Z = 4x1 + x2
+Subject to:
+x1 + x2 ≥ 6
+x1 ≤ 5
+x2 ≤ 4
+x1, x2 ≥ 0
+
+Solution: x1=2, x2=4, Z=12

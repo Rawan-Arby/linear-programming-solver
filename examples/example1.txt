@@ -1,0 +1,8 @@
+Maximize Z = 3x1 + 5x2
+Subject to:
+x1 ≤ 4
+2x2 ≤ 12
+3x1 + 2x2 ≤ 18
+x1, x2 ≥ 0
+
+Solution: x1=2, x2=6, Z=36

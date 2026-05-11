@@ -1,0 +1,7 @@
+Maximize Z = 50x1 + 18x2
+Subject to:
+2x1 + x2 ≤ 100
+x1 + x2 ≤ 80
+x1, x2 ≥ 0
+
+Solution: x1=50, x2=0, Z=2500

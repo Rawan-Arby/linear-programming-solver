@@ -1,0 +1,8 @@
+Maximize Z = 3x1 + 2x2
+Subject to:
+x1 + x2 = 10
+x1 ≤ 8
+x2 ≤ 7
+x1, x2 ≥ 0
+
+Solution: x1=8, x2=2, Z=28
