@@ -1,130 +1,264 @@
 # Linear Programming Solver
 
-A professional Python-based Linear Programming Solver implementing both Graphical and Two-Phase Simplex methods for solving optimization problems.
+A professional Python-based Linear Programming Solver implementing both the **Graphical Method** and the **Two-Phase Simplex Method** for solving optimization problems.
 
-## 📋 Description
+---
 
-This project was developed as a final project for the **Decision Support Systems** course. It provides an interactive command-line interface to solve linear programming problems with support for:
+## 📌 Overview
 
-- Maximization and Minimization
-- Multiple constraint types (≤, =, ≥)
-- Any number of decision variables (Simplex method)
-- 2-variable problems (Graphical method with visualization)
+This project was developed as part of the **Decision Support Systems** course.
+
+The solver supports:
+
+- Maximization and minimization problems
+- Multiple constraint types (`<=`, `=`, `>=`)
+- Graphical visualization for 2-variable problems
+- Two-Phase Simplex Method for problems with any number of variables
+- Step-by-step simplex tableau iterations
+
+---
 
 ## ✨ Features
 
-- **Graphical Method** - Visual representation for 2-variable problems
-- **Two-Phase Simplex Method** - Handles all constraint types for any number of variables
-- **Step-by-step iterations** - Shows tableau evolution through each iteration
-- **Interactive input** - User-friendly interface with input validation
-- **Built-in examples** - Predefined examples from course materials
-- **Professional output** - Formatted tables and clear solution display
+### 🔹 Graphical Method
+- Solves LP problems with 2 variables
+- Displays feasible region graphically
+- Finds corner points automatically
+- Highlights the optimal solution on the graph
+
+### 🔹 Two-Phase Simplex Method
+- Handles:
+  - `<=` constraints
+  - `>=` constraints
+  - `=` constraints
+- Supports both maximization and minimization
+- Displays tableau iterations step-by-step
+- Detects:
+  - infeasible problems
+  - unbounded solutions
+
+### 🔹 Additional Features
+- Interactive command-line interface
+- Input validation
+- Clean formatted output
+- Built-in examples for testing
+
+---
 
 ## 🛠️ Technologies Used
 
-- **Python 3.8+** - Core programming language
-- **NumPy** - Matrix operations and numerical computations
-- **Matplotlib** - Graphical visualization of feasible regions
+| Technology | Purpose |
+|---|---|
+| Python 3 | Core programming language |
+| NumPy | Matrix operations and numerical computations |
+| Matplotlib | Graph plotting and visualization |
 
-## 📁 Project Structure
+---
+
+# 📁 Project Structure
+
+```text
 linear-programming-solver/
 │
-├── main.py # Main entry point with menu system
-├── simplex_solver.py # Simplex method implementation (Two-Phase)
-├── graphical_solver.py # Graphical method for 2-variable problems
-├── utils.py # Helper functions for formatting and validation
-├── requirements.txt # Project dependencies
-├── README.md # Project documentation
-├── .gitignore # Git ignore file
+├── main.py
+├── simplex_solver.py
+├── graphical_solver.py
+├── utils.py
+├── requirements.txt
+├── README.md
+├── .gitignore
 │
-├── examples/ # Example problem files
-│ ├── example1.txt
-│ ├── example2.txt
-│ ├── example3.txt
-│ ├── example4.txt
-│ └── example5.txt
+├── examples/
+│   ├── example1.txt
+│   ├── example2.txt
+│   ├── example3.txt
+│   ├── example4.txt
+│   └── example5.txt
+│
+├── screenshots/
+│   ├── graphical_method.png
+│   └── simplex_tableau.png
+````
 
+---
 
-text
+# 🚀 Installation & Usage
 
-## 🚀 How to Run
-
-### 1. Clone the repository
+## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/linear-programming-solver.git
+git clone https://github.com/Rawan-Arby/linear-programming-solver.git
 cd linear-programming-solver
-2. Install dependencies
-bash
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
-3. Run the program
+```
+
+---
+
+## 3️⃣ Run the Program
+
 ```bash
 python main.py
-📖 Usage Examples
-Example 1: Maximization with ≤ constraints
-text
-Maximize Z = 3x₁ + 5x₂
-Subject to:
-x₁ ≤ 4
-2x₂ ≤ 12
-3x₁ + 2x₂ ≤ 18
-x₁, x₂ ≥ 0
+```
 
-Expected Solution: x₁ = 2, x₂ = 6, Z = 36
-Example 2: Minimization with ≥ constraints
-text
-Minimize Z = 4x₁ + x₂
-Subject to:
-x₁ + x₂ ≥ 6
-x₁ ≤ 5
-x₂ ≤ 4
-x₁, x₂ ≥ 0
+---
 
-Expected Solution: x₁ = 2, x₂ = 4, Z = 12
+# 📖 Example Problems
 
-🎯 Features in Detail
-Graphical Method
-Plots all constraint lines
+## Example 1 — Maximization Problem
 
-Identifies feasible region
+### Objective Function
 
-Finds all vertices
+```text
+Maximize Z = 3x1 + 5x2
+```
 
-Evaluates objective function at each vertex
+### Constraints
 
-Displays optimal solution on plot
+```text
+x1 <= 4
+2x2 <= 12
+3x1 + 2x2 <= 18
+x1, x2 >= 0
+```
 
-Simplex Method (Two-Phase)
-Phase I: Finds feasible solution by minimizing artificial variables
+### Expected Solution
 
-Phase II: Optimizes original objective function
+```text
+x1 = 2
+x2 = 6
+Z = 36
+```
 
-Shows complete tableau evolution
+---
 
-Handles unbounded and infeasible cases
+## Example 2 — Minimization Problem
 
-📝 Input Format
-For each constraint, enter coefficients and RHS separated by spaces:
+### Objective Function
 
-For ≤: a1 a2 ... an b
+```text
+Minimize Z = 4x1 + x2
+```
 
-For =: a1 a2 ... an b
+### Constraints
 
-For ≥: a1 a2 ... an b
+```text
+x1 + x2 >= 6
+x1 <= 5
+x2 <= 4
+x1, x2 >= 0
+```
 
-Example for 3 variables: 2 1 3 30 means 2x₁ + 1x₂ + 3x₃ ≤ 30
+### Expected Solution
 
-Type done to finish entering constraints of each type.
+```text
+x1 = 2
+x2 = 4
+Z = 12
+```
 
-👨‍💻 Author
-Course: Decision Support Systems
+---
 
-Purpose: Educational Project
+# 📊 Screenshots
 
-📄 License
-This project is for educational purposes only.
+## Graphical Method
 
-🙏 Acknowledgments
-Course instructor for guidance
 
-Open-source libraries (NumPy, Matplotlib)
+
+---
+
+## Simplex Tableau Iterations
+
+*Add screenshot here*
+
+---
+
+# 🧠 Algorithms Implemented
+
+## 🔹 Graphical Method
+
+The graphical method:
+
+* plots all constraints,
+* identifies the feasible region,
+* computes all corner points,
+* evaluates the objective function at each vertex,
+* and determines the optimal solution visually.
+
+---
+
+## 🔹 Two-Phase Simplex Method
+
+### Phase I
+
+* Introduces artificial variables
+* Finds an initial feasible solution
+
+### Phase II
+
+* Optimizes the original objective function
+* Performs pivot operations iteratively
+* Reaches the optimal solution
+
+---
+
+# 📝 Input Format
+
+For each constraint, enter:
+
+```text
+a1 a2 ... an b
+```
+
+Where:
+
+```text
+a1x1 + a2x2 + ... + anxn <= b
+```
+
+Example:
+
+```text
+2 1 3 30
+```
+
+Represents:
+
+```text
+2x1 + 1x2 + 3x3 <= 30
+```
+
+Type:
+
+```text
+done
+```
+
+when finished entering constraints.
+
+---
+
+# 🎓 Educational Purpose
+
+This project was developed for educational purposes as part of the:
+
+* Decision Support Systems Course
+* Linear Programming & Optimization Studies
+
+---
+
+# 🙏 Acknowledgments
+
+* Course instructor for guidance
+* Open-source libraries:
+
+  * NumPy
+  * Matplotlib
+
+```
