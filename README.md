@@ -168,14 +168,14 @@ Z = 12
 # 📊 Screenshots
 
 ## Graphical Method
-
+![Graphical Method](graphical.png)
 
 
 ---
 
 ## Simplex Tableau Iterations
 
-*Add screenshot here*
+![Simplex Method](simplex.png)
 
 ---
 
