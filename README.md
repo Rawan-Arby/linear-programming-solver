@@ -58,7 +58,7 @@ cd linear-programming-solver
 bash
 pip install -r requirements.txt
 3. Run the program
-bash
+```bash
 python main.py
 📖 Usage Examples
 Example 1: Maximization with ≤ constraints
